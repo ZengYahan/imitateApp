@@ -48,15 +48,15 @@ struct ContentView: View {
         Divider()
         HStack{
             Spacer()
-            index(name: "首頁", picName: "tv")
+            icon(name: "首頁", picName: "tv")
             Spacer()
-            index(name: "所有動畫", picName: "square.3.layers.3d.down.right")
+            icon(name: "所有動畫", picName: "square.3.layers.3d.down.right")
             Spacer()
-            index(name: "收藏", picName: "heart")
+            icon(name: "收藏", picName: "heart")
             Spacer()
-            index(name: "紀錄", picName: "clock")
+            icon(name: "紀錄", picName: "clock")
             Spacer()
-            index(name: "我的", picName: "person")
+            icon(name: "我的", picName: "person")
             Spacer()
             
         }
@@ -142,7 +142,7 @@ struct chageImage: View {
     
 }
 
-struct index: View {
+struct icon: View {
     let name: String
     let picName: String
     
