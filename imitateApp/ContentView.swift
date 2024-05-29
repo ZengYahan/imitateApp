@@ -78,64 +78,74 @@ struct chageImage: View {
     
     
     var body: some View {
-        VStack(alignment:.leading) {
-            ZStack{
-                Image(name)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 190,height: 250)
-                HStack{
-                    Text("雙語")
-                        .foregroundStyle(.white)
-                        .background(Color(red: 241/255, green: 116/255, blue: 138/255))
-                        .cornerRadius(5)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                        .padding(.leading, 23.0)
-                        .padding(.bottom, 5)
+        ZStack {
+            Rectangle()
+                .fill(.white)
+                .frame(width: 200, height: 330)
+                .shadow(color: .gray,  radius: 2, x: 1, y: 1)
+            
+            VStack(alignment:.leading) {
+                ZStack{
+                    Image(name)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 190,height: 240)
+                        .padding(.top,5)
+                    
                     HStack{
-                        Image(systemName: "eye.fill")
+                        Text("雙語")
                             .foregroundStyle(.white)
-                        Text(timesWatched)
-                            .foregroundStyle(.white)
+                            .background(Color(red: 241/255, green: 116/255, blue: 138/255))
+                            .cornerRadius(5)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                            .padding(.leading, 22.0)
+                            .padding(.bottom, 5)
+                        HStack{
+                            Image(systemName: "eye.fill")
+                                .foregroundStyle(.white)
+                            Text(timesWatched)
+                                .foregroundStyle(.white)
+                            
+                        }
+                        
+                        .frame(width: 110,height: 25)
+                        .background(.black)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        .opacity(0.7)
+                        .padding(.trailing,25)
+                        .padding(.bottom, 5)
+                        
+                        
                         
                     }
-                    
-                    .frame(width: 110,height: 25)
-                    .background(.black)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                    .opacity(0.7)
-                    .padding(.trailing)
-                    .padding(.bottom, 5)
-                    
+                    Image(systemName: "heart.fill")
+                        .foregroundStyle(Color(red: 241/255, green: 116/255, blue: 138/255))
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                        .padding(.trailing,25)
+                        .padding(.top,10)
                     
                     
                 }
-                Image(systemName: "heart.fill")
-                    .foregroundStyle(Color(red: 241/255, green: 116/255, blue: 138/255))
-                    .font(.title2)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    .padding(.trailing,20)
-                    .padding(.top,10)
-                
+                Text(name)
+                    .bold()
+                    .padding(.leading)
+                Text(yearEpisode)
+                    .padding(.leading)
+                HStack{
+                    Image(systemName: "star.fill")
+                        .foregroundStyle(.orange)
+                        .padding(.bottom)
+                    Text(star)
+                        .foregroundStyle(.orange)
+                        .padding(.bottom)
+                }
+                .padding(.leading)
                 
             }
-            Text(name)
-                .bold()
-                .font(.title3)
-                .padding(.leading)
-            Text(yearEpisode)
-                .padding(.leading)
-            HStack{
-                Image(systemName: "star.fill")
-                    .foregroundStyle(.orange)
-                Text(star)
-                    .foregroundStyle(.orange)
-                
-            }
-            .padding(.leading)
+            .shadow(radius: 10)
+            
         }
-        
-        .shadow(radius: 10)
         
         
     }
